@@ -1,0 +1,63 @@
+#portfolio{
+  height: auto;
+  padding-bottom: 200px;
+  background-image: url(../img/skill.jpeg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  h2{
+    font-size: 50px;
+    text-align: center;
+    padding-top: 50px;
+    color: red;
+  }
+}
+.portfolio-main{
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  img{
+    margin: 30px;
+    width: 300px;
+    height: 300px;
+    transition: 1s;
+  }
+  img:hover{
+    transform: scale(1.25);
+  }
+}
+
+.portfolio-slider{
+  margin-top: 200px;
+  .carousel {
+
+  }
+.carousel-cell {
+
+img{
+  margin: 30px;
+  width: 300px;
+  height: 300px;
+  transition: 1s;
+  opacity: 0.3
+}
+}
+.previous{
+  left: 50px;
+}
+.next{
+  right: 50px;
+}
+.carousel-cell.is-selected {
+  display: block;
+  transition: 1s;
+  img{
+    transition: 1s;
+    opacity: 1;
+  }
+}
+
+.flickity-page-dots{
+  display: none;
+}
+}

@@ -1,0 +1,22 @@
+{
+  "name": "my_portfolio",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Munssin <munssin@yandex.ua>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "flickity": "^2.0.5",
+    "animate.css": "^3.5.2"
+  }
+}

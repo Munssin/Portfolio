@@ -1,0 +1,385 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; }
+
+header {
+  position: relative;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden; }
+
+.row {
+  padding: 0;
+  margin: 0; }
+
+h1 {
+  color: red;
+  font-size: 58px;
+  text-align: center;
+  font-family: 'Anton', sans-serif;
+  padding-top: 20%; }
+  h1 span {
+    font-size: 68px; }
+
+video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%); }
+
+#menu {
+  position: fixed;
+  width: 800px;
+  height: 50px;
+  background-color: grey;
+  opacity: 0.3;
+  top: 20px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  padding: 0px;
+  z-index: 999; }
+  #menu ul {
+    list-style: none;
+    display: inline-flex;
+    font-family: 'Anton', sans-serif; }
+    #menu ul li {
+      margin-right: 50px;
+      border-right: 2px solid red;
+      padding-right: 70px;
+      cursor: pointer; }
+      #menu ul li a {
+        text-decoration: none;
+        color: red;
+        font-size: 34px; }
+      #menu ul li a:hover {
+        color: blue; }
+    #menu ul li:last-child {
+      border: none; }
+
+.mob-men {
+  display: none; }
+
+.phone-call {
+  position: fixed;
+  bottom: 60px;
+  right: 45px;
+  cursor: pointer;
+  z-index: 999; }
+  .phone-call .uptocall-mini-phone:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url(../img/mini.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    animation: uptocallphone 1.5s linear infinite; }
+
+@keyframes uptocallphone {
+  0% {
+    transform: rotate(0); }
+  10% {
+    transform: rotate(15deg); }
+  20% {
+    transform: rotate(30deg); }
+  30% {
+    transform: rotate(45deg); }
+  40% {
+    transform: rotate(60deg); }
+  50% {
+    transform: rotate(75deg); }
+  60% {
+    transform: rotate(60deg); }
+  70% {
+    transform: rotate(45deg); }
+  80% {
+    transform: rotate(30deg); }
+  90% {
+    transform: rotate(15deg); }
+  100% {
+    transform: rotate(0); } }
+  .phone-call .uptocall-mini-phone {
+    border-radius: 50% !important;
+    background-clip: padding-box;
+    background-color: purple;
+    opacity: 0.3;
+    width: 60px;
+    height: 60px;
+    animation: uptocallmini 1.5s 0s ease-out infinite; }
+  .phone-call .uptocall-mini-phone:hover {
+    opacity: 1; }
+
+.svg {
+  position: absolute;
+  left: 0;
+  top: 200px; }
+
+@media (max-width: 1024px) {
+  header #menu {
+    display: none; }
+  header .mob-men {
+    display: block; }
+    header .mob-men .button_container {
+      position: fixed;
+      top: 10%;
+      right: 45px;
+      height: 27px;
+      width: 35px;
+      cursor: pointer;
+      z-index: 100;
+      transition: opacity .25s ease; }
+      header .mob-men .button_container:hover {
+        opacity: .7; }
+      header .mob-men .button_container.active .top {
+        transform: translateY(11px) translateX(0) rotate(45deg);
+        background: #FFF; }
+      header .mob-men .button_container.active .middle {
+        opacity: 0;
+        background: #FFF; }
+      header .mob-men .button_container.active .bottom {
+        transform: translateY(-11px) translateX(0) rotate(-45deg);
+        background: #FFF; }
+      header .mob-men .button_container span {
+        background: red;
+        border: none;
+        height: 5px;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all .35s ease;
+        cursor: pointer; }
+        header .mob-men .button_container span:nth-of-type(2) {
+          top: 11px; }
+        header .mob-men .button_container span:nth-of-type(3) {
+          top: 22px; }
+    header .mob-men .overlay {
+      position: fixed;
+      z-index: 10;
+      background: grey;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 0%;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .35s, visibility .35s, height .35s;
+      overflow: hidden; }
+      header .mob-men .overlay.open {
+        opacity: .95;
+        visibility: visible;
+        height: 100%; }
+        header .mob-men .overlay.open li {
+          animation: fadeInRight .5s ease forwards;
+          animation-delay: .35s; }
+          header .mob-men .overlay.open li:nth-of-type(2) {
+            animation-delay: .4s; }
+          header .mob-men .overlay.open li:nth-of-type(3) {
+            animation-delay: .45s; }
+          header .mob-men .overlay.open li:nth-of-type(4) {
+            animation-delay: .50s; }
+      header .mob-men .overlay nav {
+        position: relative;
+        height: 70%;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 50px;
+        font-family: 'Vollkorn', serif;
+        font-weight: 400;
+        text-align: center; }
+      header .mob-men .overlay ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 auto;
+        display: inline-block;
+        position: relative;
+        height: 100%; }
+        header .mob-men .overlay ul li {
+          display: block;
+          height: 25%;
+          height: calc(100% / 4);
+          min-height: 50px;
+          position: relative;
+          opacity: 0; }
+          header .mob-men .overlay ul li a {
+            display: block;
+            position: relative;
+            color: #FFF;
+            text-decoration: none;
+            overflow: hidden; }
+            header .mob-men .overlay ul li a:hover:after, header .mob-men .overlay ul li a:focus:after, header .mob-men .overlay ul li a:active:after {
+              width: 100%; }
+            header .mob-men .overlay ul li a:after {
+              content: '';
+              position: absolute;
+              bottom: 0;
+              left: 50%;
+              width: 0%;
+              transform: translateX(-50%);
+              height: 3px;
+              background: #FFF;
+              transition: .35s; }
+  @keyframes fadeInRight {
+    0% {
+      opacity: 0;
+      left: 20%; }
+    100% {
+      opacity: 1;
+      left: 0; } }
+    header .mob-men .w {
+      display: none; }
+    header .mob-men .fixed-logo {
+      position: fixed;
+      top: 0%;
+      left: 0%;
+      height: 100px;
+      width: 100%;
+      cursor: pointer;
+      z-index: 9;
+      background-color: grey;
+      display: flex;
+      justify-content: center; }
+      header .mob-men .fixed-logo img {
+        height: 70px;
+        width: 70px; } }
+
+#skill {
+  min-height: 500px;
+  width: 100%;
+  margin: 400px 0;
+  padding-top: 100px;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat; }
+  #skill .row .main-skill h2 {
+    font-size: 50px;
+    text-align: center;
+    padding-top: 50px;
+    color: red; }
+  #skill .row .main-skill .html {
+    position: absolute;
+    top: 300px;
+    left: 100px; }
+    #skill .row .main-skill .html h3 {
+      float: left;
+      font-size: 34px;
+      color: red;
+      transition: 1s; }
+  #skill .row .main-skill .js {
+    padding-top: 80px; }
+    #skill .row .main-skill .js h3 {
+      font-size: 34px;
+      color: red;
+      text-align: center;
+      transition: 1s; }
+  #skill .row .main-skill .css {
+    position: absolute;
+    top: 300px;
+    right: 100px; }
+    #skill .row .main-skill .css h3 {
+      font-size: 34px;
+      color: red;
+      float: right;
+      transition: 1s; }
+  #skill .row .main-skill h3:hover {
+    cursor: pointer;
+    font-size: 50px; }
+  #skill .row .other-skills ul {
+    position: absolute;
+    top: 200px;
+    list-style: none;
+    display: inline-flex; }
+    #skill .row .other-skills ul li {
+      color: red;
+      font-size: 20px;
+      padding-right: 20px;
+      transition: 1s; }
+    #skill .row .other-skills ul li:hover {
+      cursor: pointer;
+      font-size: 24px;
+      text-shadow: 2px 2px 8px blue; }
+
+#portfolio {
+  height: auto;
+  padding-bottom: 200px;
+  background-image: url(../img/skill.jpeg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat; }
+  #portfolio h2 {
+    font-size: 50px;
+    text-align: center;
+    padding-top: 50px;
+    color: red; }
+
+.portfolio-main {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center; }
+  .portfolio-main img {
+    margin: 30px;
+    width: 300px;
+    height: 300px;
+    transition: 1s; }
+  .portfolio-main img:hover {
+    transform: scale(1.25); }
+
+.portfolio-slider {
+  margin-top: 200px; }
+  .portfolio-slider .carousel-cell img {
+    margin: 30px;
+    width: 300px;
+    height: 300px;
+    transition: 1s;
+    opacity: 0.3; }
+  .portfolio-slider .previous {
+    left: 50px; }
+  .portfolio-slider .next {
+    right: 50px; }
+  .portfolio-slider .carousel-cell.is-selected {
+    display: block;
+    transition: 1s; }
+    .portfolio-slider .carousel-cell.is-selected img {
+      transition: 1s;
+      opacity: 1; }
+  .portfolio-slider .flickity-page-dots {
+    display: none; }
+
+#contact {
+  margin-top: 100px;
+  margin-bottom: 200px; }
+  #contact h2 {
+    font-size: 50px;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 100px;
+    color: red; }
+  #contact .row {
+    padding: 0;
+    margin: 0; }
+    #contact .row p {
+      text-align: center;
+      font-size: 28px;
+      color: red;
+      padding-bottom: 50px; }
+    #contact .row p:hover {
+      cursor: pointer;
+      text-shadow: 2px 2px 8px blue; }
+
+footer {
+  height: 50px;
+  background-color: black; }
+  footer h2 {
+    text-align: center;
+    color: red;
+    font-size: 30px;
+    padding-top: 8px; }

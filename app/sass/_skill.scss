@@ -1,0 +1,74 @@
+#skill{
+  min-height: 500px;
+  width: 100%;
+  margin: 400px 0;
+  padding-top: 100px;
+  // background-image: url(../img/skill1.jpeg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  .row{
+    .main-skill{
+      h2{
+        font-size: 50px;
+        text-align: center;
+        padding-top: 50px;
+        color: red;
+      }
+      .html{
+        position: absolute;
+        top: 300px;
+        left: 100px;
+        h3{
+          float: left;
+          font-size: 34px;
+          color: red;
+          transition: 1s;
+        }
+      }
+      .js{
+        padding-top: 80px;
+        h3{
+          font-size: 34px;
+          color: red;
+          text-align: center;
+          transition: 1s;
+        }
+      }
+      .css{
+        position: absolute;
+        top: 300px;
+        right: 100px;
+        h3{
+          font-size: 34px;
+          color: red;
+          float: right;
+          transition: 1s;
+        }
+      }
+      h3:hover{
+        cursor: pointer;
+        font-size: 50px;
+      }
+    }
+    .other-skills{
+      ul{
+        position: absolute;
+        top: 200px;
+        list-style: none;
+        display: inline-flex;
+        li{
+          color: red;
+          font-size: 20px;
+          padding-right: 20px;
+          transition: 1s;
+        }
+        li:hover{
+          cursor: pointer;
+          font-size: 24px;
+          text-shadow: 2px 2px 8px blue;
+        }
+      }
+    }
+  }
+}
