@@ -118,12 +118,29 @@ video {
   .phone-call .uptocall-mini-phone:hover {
     opacity: 1; }
 
+#main-logo {
+  background-image: url(../img/main-logo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 450px;
+  width: 450px;
+  margin: 0 auto; }
+
+@media (max-width: 569px) {
+  #main-logo {
+    height: 320px;
+    width: 320px; } }
+
 .svg {
   position: absolute;
   left: 0;
-  top: 200px; }
+  top: 200px;
+  display: none; }
 
 @media (max-width: 1024px) {
+  header h1 {
+    padding-top: 52%; }
   header #menu {
     display: none; }
   header .mob-men {
@@ -175,7 +192,7 @@ video {
       transition: opacity .35s, visibility .35s, height .35s;
       overflow: hidden; }
       header .mob-men .overlay.open {
-        opacity: .95;
+        opacity: 0.8;
         visibility: visible;
         height: 100%; }
         header .mob-men .overlay.open li {
@@ -256,6 +273,7 @@ video {
   min-height: 500px;
   width: 100%;
   margin: 400px 0;
+  margin-top: 200px;
   padding-top: 100px;
   background-position: center center;
   background-size: cover;
@@ -274,6 +292,9 @@ video {
       font-size: 34px;
       color: red;
       transition: 1s; }
+  @media (max-width: 569px) {
+    #skill .row .main-skill .html {
+      left: 25px; } }
   #skill .row .main-skill .js {
     padding-top: 80px; }
     #skill .row .main-skill .js h3 {
@@ -290,6 +311,9 @@ video {
       color: red;
       float: right;
       transition: 1s; }
+  @media (max-width: 569px) {
+    #skill .row .main-skill .css {
+      right: 25px; } }
   #skill .row .main-skill h3:hover {
     cursor: pointer;
     font-size: 50px; }
@@ -307,6 +331,19 @@ video {
       cursor: pointer;
       font-size: 24px;
       text-shadow: 2px 2px 8px blue; }
+
+@media (max-width: 1024px) {
+  #skill {
+    margin-bottom: 520px; }
+    #skill .row .other-skills {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 140px; }
+      #skill .row .other-skills ul {
+        display: block;
+        position: static;
+        text-align: center; } }
 
 #portfolio {
   height: auto;
@@ -329,9 +366,11 @@ video {
     margin: 30px;
     width: 300px;
     height: 300px;
+    opacity: 0.7;
     transition: 1s; }
   .portfolio-main img:hover {
-    transform: scale(1.25); }
+    transform: scale(1.25);
+    opacity: 1; }
 
 .portfolio-slider {
   margin-top: 200px; }
@@ -341,10 +380,18 @@ video {
     height: 300px;
     transition: 1s;
     opacity: 0.3; }
+  .portfolio-slider .carousel-cell img:hover {
+    filter: blur(0); }
   .portfolio-slider .previous {
     left: 50px; }
+  @media (max-width: 569px) {
+    .portfolio-slider .previous {
+      left: 5px; } }
   .portfolio-slider .next {
     right: 50px; }
+  @media (max-width: 569px) {
+    .portfolio-slider .next {
+      right: 5px; } }
   .portfolio-slider .carousel-cell.is-selected {
     display: block;
     transition: 1s; }
@@ -383,3 +430,11 @@ footer {
     color: red;
     font-size: 30px;
     padding-top: 8px; }
+
+#form {
+  position: fixed;
+  right: 50px;
+  bottom: 150px;
+  display: none; }
+  #form input {
+    background: rgba(0, 0, 0, 0.5); }

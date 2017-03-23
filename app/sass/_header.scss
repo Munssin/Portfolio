@@ -120,11 +120,26 @@ video{
     opacity: 1;
   }
 }
-
+#main-logo{
+  background-image: url(../img/main-logo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 450px;
+  width: 450px;
+  margin: 0 auto;
+}
+@media(max-width: 569px){
+  #main-logo{
+    height: 320px;
+    width: 320px;
+  }
+}
 .svg{
   position: absolute;
   left: 0;
   top: 200px;
+  display: none;
 }
 
 // button{
@@ -134,7 +149,9 @@ video{
 
 @media(max-width: 1024px){
   header{
-    h1{}
+    h1{
+      padding-top: 52%;
+    }
     #menu{
       display: none;
     }
@@ -205,7 +222,7 @@ video{
         overflow: hidden;
 
         &.open {
-          opacity: .95;
+          opacity: 0.8;
           visibility: visible;
           height: 100%;
 

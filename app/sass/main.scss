@@ -2,3 +2,14 @@
 @import "skill";
 @import "portfolio";
 @import"contact";
+
+
+#form{
+  position: fixed;
+  right: 50px;
+  bottom: 150px;
+  display: none;
+  input{
+    background: rgba(0, 0, 0, 0.5);
+  }
+}

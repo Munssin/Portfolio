@@ -2,22 +2,22 @@ $(document).ready(function() {
 	new WOW().init();
 });
 
-$("#1").click(function() {
+$("#1, #5").click(function() {
     $('html, body').animate({
         scrollTop: $("#header").offset().top
     }, 2000);
 });
-$("#2").click(function() {
+$("#2, #6").click(function() {
     $('html, body').animate({
         scrollTop: $("#skill").offset().top
     }, 2000);
 });
-$("#3").click(function() {
+$("#3, #7").click(function() {
     $('html, body').animate({
         scrollTop: $("#portfolio").offset().top
     }, 2000);
 });
-$("#4").click(function() {
+$("#4, #8").click(function() {
     $('html, body').animate({
         scrollTop: $("#contact").offset().top
     }, 2000);
@@ -80,6 +80,13 @@ new Scroller({
 });
 // animation
 
+//call
+$('.phone-call').click(function() {
+ $('#form').css('display', 'block');
+ // $('#overlay').toggleClass('open');
+});
+//call
+
 //mobile-menu
 $('#toggle').click(function() {
  $(this).toggleClass('active');
@@ -87,7 +94,18 @@ $('#toggle').click(function() {
 });
 //mobile-menu
 
-
+//form
+$("#form").submit(function () {
+	$.ajax({
+		type: "POST",
+		url: "../php/mail.php",
+		data: $(this).serialize()
+	}).done(function() {
+		alert("Дякую за заявку! Скоро я звяжусь з вами");
+	});
+	return false;
+});
+//form
 
 
 // // Создаем распознаватель

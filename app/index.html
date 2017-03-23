@@ -36,14 +36,13 @@
             <span class="bottom"></span>
           </div>
 
-          <div class="overlay" id="overlay" class="non">
+          <div class="overlay" id="overlay">
             <nav class="overlay-menu">
               <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Work</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a id="5">MAIN</a></li>
+                <li><a id="6">SKILL</a></li>
+                <li><a id="7">PORTFOLIO</a></li>
+                <li><a id="8">CONTACT</a></li>
               </ul>
             </nav>
           </div>
@@ -57,8 +56,17 @@
           <a href="+380931287896"></a>
         </div>
       </div>
-
 </header>
+
+
+<form id="form">
+  <input type="text" name="name" placeholder="Ваше ім'я" required> <br>
+  <input type="tel" name="phone" placeholder="Ваше телефон" required> <br>
+  <input type="email" name="email" placeholder="Ваше email" required> <br>
+  <input type="text" name="text" placeholder="Питання" required> <br>
+  <button>Відправити</button>
+</form>
+<div id="main-logo"></div>
 <div class="svg">
 
 <!-- <svg version="1.1" id="Шар_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -126,18 +134,26 @@
 
 <div id="portfolio">
   <h2>LAST WORKS</h2>
-  <div class="portfolio-main">
-    <div class="image">
-      <a href="https://munssin.github.io/munss.github.io/"><img src="/img/1.png" alt=""></a>
+      <div class="portfolio-main">
+      <div class="row">
+        <div class="col-md-4 col-sm-12 col-xs-12">
+        <div class="image">
+          <a href="https://munssin.github.io/munss.github.io/"><img src="/img/1.png" alt=""></a>
+        </div>
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+        <div class="image">
+          <a href="https://munssin.github.io/window-market.io/"><img src="/img/web-fon.png" alt=""></a>
+        </div>
+        </div>
+        <div class="col-md-4 col-sm-12 col-xs-12">
+        <div class="image">
+          <a href="http://in-joy.com.ua/uk/"><img src="/img/2.png" alt=""></a>
+        </div>
+      </div>
     </div>
-    <div class="image">
-      <a href="https://munssin.github.io/window-market.io/"><img src="/img/web-fon.png" alt=""></a>
-    </div>
-    <div class="image">
-      <a href="http://in-joy.com.ua/uk/"><img src="/img/2.png" alt=""></a>
-    </div>
-
   </div>
+
   <div class="portfolio-slider">
     <h2>ALL WORKS</h2>
     <div class="carousel" data-flickity>
