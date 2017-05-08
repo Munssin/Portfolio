@@ -10,25 +10,55 @@
   <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Diplomata+SC" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Courgette|Griffy|Pathway+Gothic+One|Ranga" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
   <title>Document</title>
 </head>
 <body>
 <header id="header">
-        <h1 class="animated zoomInUp">WELCOM TO <br> <span>MUNSSIN Studio</span></h1>
-        <video autoplay="true" muted="muted" loop>
-          <source src="a.mp4" type="video/mp4">
-          <source src="a.webm" type="video/webm">
-        </video>
-
-        <div id="menu" class="animated slideInDown">
-          <ul>
-            <li><a id="1">MAIN</a></li>
-            <li><a id="2">SKILL</a></li>
-            <li><a id="3">PORTFOLIO</a></li>
-            <li><a id="4">CONTACT</a></li>
-          </ul>
+        <h1 class="animated zoomInUp">Bohdan Hulovatyi <br> <span>Web-Portfolio</span></h1>
+        <div class="v1">
+          <video autoplay="true" muted="muted" loop>
+            <source  src="a.mp4" type="video/mp4">
+            <source  src="a.webm" type="video/webm">
+          </video>
         </div>
+        <div class="v2">
+          <video autoplay="true" muted="muted" loop>
+            <source  src="http://static-p.iuqo.com/media/home/home/video/cloud2.mp4" type="video/mp4">
+            <!-- <source  src="c.mp4" type="video/mp4">
+            <source  src="c.webm" type="video/webm"> -->
+          </video>
+        </div>
+
+        <div id="video">
+          <span>Try these <br> backgrounds</span>
+          <div class="b1">Space
+            <div class="blue"></div>
+          </div>
+          <div class="b2">Sky
+            <div class="white"></div>
+          </div>
+        </div>
+
+        <nav id="menu" class="top-right open">
+        	<a class="disc l1">
+        		<p>Contact</p>
+        	</a>
+        	<a class="disc l2">
+        		<p>Portfolio</p>
+        	</a>
+        	<a class="disc l3">
+        		<p>Skill</p>
+        	</a>
+        	<a class="disc l4">
+        		<p>Main</p>
+        	</a>
+        	<a class="disc l5 toggle">
+        		Menu
+        	</a>
+        </nav>
+
         <div class="mob-men">
           <div class="button_container" id="toggle" class="non">
             <span class="top"></span>
@@ -47,9 +77,6 @@
             </nav>
           </div>
         </div>
-        <!-- <button onclick="speech ()">Слушать</button>
-        <button onclick="talk ()">Проговорить</button>
-        <button onclick="stop ()">Остановить</button> -->
 
       <div class="phone-call">
         <div class="uptocall-mini-phone">
@@ -58,14 +85,27 @@
       </div>
 </header>
 
+<div class="feedback">
+  <form id="form">
+    <svg version="1.1" id="icon-close" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 507.2 507.2" style="enable-background:new 0 0 507.2 507.2;" xml:space="preserve">
+<circle style="fill:#F15249;" cx="253.6" cy="253.6" r="253.6"/>
+<path style="fill:#AD0E0E;" d="M147.2,368L284,504.8c115.2-13.6,206.4-104,220.8-219.2L367.2,148L147.2,368z"/>
+<path style="fill:#FFFFFF;" d="M373.6,309.6c11.2,11.2,11.2,30.4,0,41.6l-22.4,22.4c-11.2,11.2-30.4,11.2-41.6,0l-176-176
+	c-11.2-11.2-11.2-30.4,0-41.6l23.2-23.2c11.2-11.2,30.4-11.2,41.6,0L373.6,309.6z"/>
+<path style="fill:#D6D6D6;" d="M280.8,216L216,280.8l93.6,92.8c11.2,11.2,30.4,11.2,41.6,0l23.2-23.2c11.2-11.2,11.2-30.4,0-41.6
+	L280.8,216z"/>
+<path style="fill:#FFFFFF;" d="M309.6,133.6c11.2-11.2,30.4-11.2,41.6,0l23.2,23.2c11.2,11.2,11.2,30.4,0,41.6L197.6,373.6
+	c-11.2,11.2-30.4,11.2-41.6,0l-22.4-22.4c-11.2-11.2-11.2-30.4,0-41.6L309.6,133.6z"/>
+</svg>
+    <input type="text" name="name" placeholder="Ваше ім'я" required> <br>
+    <input type="tel" name="phone" placeholder="Ваше телефон" required> <br>
+    <input type="email" name="email" placeholder="Ваше email" required> <br>
+    <textarea minlength="4" class="form-control" name="comment" placeholder="Питання" rows="4"></textarea><br>
+    <button>Відправити</button>
+  </form>
+</div>
 
-<form id="form">
-  <input type="text" name="name" placeholder="Ваше ім'я" required> <br>
-  <input type="tel" name="phone" placeholder="Ваше телефон" required> <br>
-  <input type="email" name="email" placeholder="Ваше email" required> <br>
-  <input type="text" name="text" placeholder="Питання" required> <br>
-  <button>Відправити</button>
-</form>
 <div id="main-logo"></div>
 <div class="svg">
 
@@ -98,12 +138,21 @@
         <h2>SKILLS</h2>
         <div class="html">
           <h3 class="wow bounceInLeft">HTML</h3>
+          <div class="bar">
+            <div class="bar-inner bar-90" data-percent="90%"></div>
+          </div>
         </div>
         <div class="js">
           <h3 class="wow bounceInDown">JAVASCRIPT</h3>
+          <div class="bar">
+            <div class="bar-inner bar-75" data-percent="75%"></div>
+          </div>
         </div>
         <div class="css">
           <h3 class="wow bounceInRight ">CSS</h3>
+          <div class="bar">
+            <div class="bar-inner bar-90" data-percent="95%"></div>
+          </div>
         </div>
       </div>
       <div class="other-skills">
@@ -138,12 +187,12 @@
       <div class="row">
         <div class="col-md-4 col-sm-12 col-xs-12">
         <div class="image">
-          <a href="https://munssin.github.io/munss.github.io/"><img src="/img/1.png" alt=""></a>
+          <a href="https://munssin.github.io/munss.github.io/"><img src="/img/1.jpeg" alt=""></a>
         </div>
         </div>
         <div class="col-md-4 col-sm-12 col-xs-12">
         <div class="image">
-          <a href="https://munssin.github.io/window-market.io/"><img src="/img/web-fon.png" alt=""></a>
+          <a href="https://munssin.github.io/otakoyi-test/"><img src="/img/3.png" alt=""></a>
         </div>
         </div>
         <div class="col-md-4 col-sm-12 col-xs-12">
@@ -158,7 +207,7 @@
     <h2>ALL WORKS</h2>
     <div class="carousel" data-flickity>
       <div class="carousel-cell"><a href="http://in-joy.com.ua/uk/"><img src="/img/2.png" alt=""></a></div>
-      <div class="carousel-cell"><a href="http://in-joy.com.ua/uk/"><img src="/img/2.png" alt=""></a></div>
+      <div class="carousel-cell"><a href="https://munssin.github.io/window-market.io/ "><img src="/img/win.png" alt=""></a></div>
       <div class="carousel-cell"><a href="http://in-joy.com.ua/uk/"><img src="/img/2.png" alt=""></a></div>
       <div class="carousel-cell"><a href="http://in-joy.com.ua/uk/"><img src="/img/2.png" alt=""></a></div>
       <div class="carousel-cell"><a href="http://in-joy.com.ua/uk/"><img src="/img/2.png" alt=""></a></div>
@@ -196,7 +245,7 @@
   </div>
 </div>
 <footer>
-  <h2>MUNSSIN POWER</h2>
+  <h2> POWER by MUNSSIN </h2>
 </footer>
 
 <script src="/libs/jquery/dist/jquery.min.js"></script>

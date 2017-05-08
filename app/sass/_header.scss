@@ -18,61 +18,222 @@ h1{
   color: red;
   font-size: 58px;
   text-align: center;
-  font-family: 'Anton', sans-serif;
+  font-family: Alegreya Sans, sans-serif;
   padding-top: 20%;
   span{
     font-size: 68px;
   }
 }
-
-video{
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  z-index: -1;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  transform: translate(-50%, -50%);
-}
-#menu{
-  position: fixed;
-  width: 800px;
-  height: 50px;
-  background-color: grey;
-  opacity: 0.3;
-  // text-align: center;
-  top: 20px;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  padding: 0px;
-  z-index: 999;
-  ul{
-    list-style: none;
-    display: inline-flex;
-    font-family: 'Anton', sans-serif;
-
-    li{
-      margin-right: 50px;
-      border-right: 2px solid red;
-      padding-right: 70px;
-      cursor: pointer;
-      a{
-        text-decoration: none;
-        color: red;
-        font-size: 34px;
-      }
-      a:hover{
-        color: blue;
-      }
-    }
-    li:last-child{
-      border: none;
+@media (max-width: 569px) {
+  h1{
+    font-size: 44px;
+    padding-top: 55%;
+    span{
+      font-size: 44px;
     }
   }
 }
+.v1{
+  display: block;
+  video{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+  }
+}
+.v2{
+  display: none;
+  video{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+  }
+}
+#video{
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+  text-align: center;
+  font-family: Alegreya Sans, sans-serif;
+    span{
+      color: #fff;
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+    .b1{
+      color: #fff;
+      padding-right: 40px;
+      cursor: pointer;
+      position: relative;
+      font-size: 20px;
+      margin-top: 20px;
+      .blue{
+        width: 20px;
+        height: 20px;
+        border: 1px solid;
+        position: absolute;
+        background-color: blue;
+        top: 5px;
+        left: 85px;
+      }
+    }
+    .b2{
+      color: #fff;
+      padding-right: 40px;
+      cursor: pointer;
+      position: relative;
+      font-size: 20px;
+      .white{
+        width: 20px;
+        height: 20px;
+        border: 1px solid;
+        position: absolute;
+        background-color: #fff;
+        top: 5px;
+        left: 85px;
+      }
+    }
+}
+// menu
+$size : 50px;
+$items : 5;
+$transition : .5s;
+$bounce : cubic-bezier(.3,1.4,.5,.9);
+$color-inner : gold;
+$color-outer : tomato;
+$background: mix($color-inner, $color-outer);
+$black : shade($color-outer, 80%);
+$start-scale : .5;
+$start-rot : 190deg;
+
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans:800,900');
+
+
+nav {
+	display: block;
+	position: fixed;
+	width: $size * $items * 2;
+	height: $size * $items * 2;
+	user-select: none;
+	transform: translate3d($size*.5,-$size*.5,0);
+	transition: transform $transition $bounce;
+  z-index: 999;
+
+	&.open {
+		transform: translate3d(0,0,0);
+	}
+
+	&.top-right {
+		top: -$size * ($items - 2.2);
+		right: -$size * ($items - 2.2);
+	}
+}
+
+.disc {
+  	position: absolute;
+  	display: inline-block;
+  	text-align: center;
+  	cursor: pointer;
+  	font: $size*.5 Alegreya Sans, sans-serif;
+  	line-height: $size * .8;
+  	padding-top: $size * .2;
+  	border-radius: $size * $items;
+  	transform: scale3d($start-scale, $start-scale, $start-scale) rotate3d(0,0,1,$start-rot);
+  	pointer-events: none;
+  	opacity: 0;
+  	cursor: pointer;
+  	transition: transform $transition $bounce, opacity $transition;
+
+  	p {
+  		transform: rotate(180deg);
+      transition: 0.5s all;
+  	}
+    p:hover {
+      font-size: 2rem;
+    }
+
+  	.open & {
+  		pointer-events: auto;
+  		opacity: 1;
+  	}
+  }
+
+  @for $i from 1 through $items {
+  	.l#{$i} {
+  		$i : $i - 1;
+  		$-i : $items - $i;
+  		$pct : $i/$items * 100%;
+  		$color :  mix($color-inner, $color-outer, $pct);
+
+  		top: $i * $size;
+  		left: $i * $size;
+  		right: $i * $size;
+  		bottom: $i * $size;
+  		background: $color;
+  		transition-delay: $i * $transition/$items;
+
+  		.open & {
+  			transition-delay: $i * $transition/$items;
+  			transform: scale3d(1,1,1) rotate3d(0,0,1,$start-rot);
+  			opacity: 1;
+
+  			&:hover {
+  				background: shade($color, 90%);
+  				color: $color;
+  				transition-delay: 0s;
+  			}
+
+  			&:active {
+  				background: shade($color, 50%);
+  				color: $color;
+  			}
+
+  			&.toggle {
+  				transform: scale3d(.9,.9,.9) rotate3d(0,0,1,$start-rot - 180deg);
+  			}
+  		}
+  	}
+  }
+
+  .toggle {
+  	line-height: $size*2;
+  	padding: 0;
+  	width: $size*2;
+  	background: $color-inner;
+  	opacity: 1;
+  	transform: none;
+  	pointer-events: auto;
+  	transition-delay: 0s;
+
+  	.open & {
+  		transform: rotate3d(0,0,1,0deg);
+  	}
+
+  	&:hover {
+  		background: shade($color-inner, 90%);
+  		color: $color-inner;
+  	}
+  	&:active {
+  		background: shade($color-inner, 50%);
+  		color: rgba($color-inner, .5);
+  		transform: scale(.9);
+  		transition-duration: 0s;
+  	}
+  }
+  // menu
+
 .mob-men{
   display: none;
 }
@@ -118,6 +279,11 @@ video{
   }
   .uptocall-mini-phone:hover{
     opacity: 1;
+  }
+}
+@media(max-width: 569px) {
+  .phone-call{
+    display: none;
   }
 }
 #main-logo{
@@ -227,6 +393,7 @@ video{
           height: 100%;
 
           li {
+            font-family: Alegreya Sans, sans-serif;
             animation: fadeInRight .5s ease forwards;
             animation-delay: .35s;
 
@@ -247,9 +414,10 @@ video{
           top: 50%;
           transform: translateY(-50%);
           font-size: 50px;
-          font-family: 'Vollkorn', serif;
+          font-family: Alegreya Sans, sans-serif;
           font-weight: 400;
           text-align: center;
+          width: 100%;
         }
         ul {
           list-style: none;
@@ -260,6 +428,7 @@ video{
           height: 100%;
 
           li {
+            font-family: Alegreya Sans, sans-serif;
             display: block;
             height: 25%;
             height: calc(100% / 4);

@@ -2,24 +2,24 @@ $(document).ready(function() {
 	new WOW().init();
 });
 
-$("#1, #5").click(function() {
+$(".l1, #5").click(function() {
     $('html, body').animate({
-        scrollTop: $("#header").offset().top
+        scrollTop: $("#contact").offset().top
     }, 2000);
 });
-$("#2, #6").click(function() {
-    $('html, body').animate({
-        scrollTop: $("#skill").offset().top
-    }, 2000);
-});
-$("#3, #7").click(function() {
+$(".l2, #6").click(function() {
     $('html, body').animate({
         scrollTop: $("#portfolio").offset().top
     }, 2000);
 });
-$("#4, #8").click(function() {
+$(".l3, #7").click(function() {
     $('html, body').animate({
-        scrollTop: $("#contact").offset().top
+        scrollTop: $("#skill").offset().top
+    }, 2000);
+});
+$(".l4, #8").click(function() {
+    $('html, body').animate({
+        scrollTop: $("#header").offset().top
     }, 2000);
 });
 
@@ -107,38 +107,39 @@ $("#form").submit(function () {
 });
 //form
 
+// menu
+toggle = document.querySelectorAll(".toggle")[0];
+nav = document.querySelectorAll("nav")[0];
+toggle_open_text = 'Menu';
+toggle_close_text = 'Close';
 
-// // Создаем распознаватель
-//  var recognizer = new webkitSpeechRecognition();
-//
-//  // Ставим опцию, чтобы распознавание началось ещё до того, как пользователь закончит говорить
-//  recognizer.interimResults = true;
-//
-//  // Какой язык будем распознавать?
-//  recognizer.lang = 'ru-Ru';
-//
-//  // Используем колбек для обработки результатов
-//  recognizer.onresult = function (event) {
-// 	 var result = event.results[event.resultIndex];
-// 	 if (result.isFinal) {
-// 		 alert('Вы сказали: ' + result[0].transcript);
-// 	 } else {
-// 		 console.log('Промежуточный результат: ', result[0].transcript);
-// 	 }
-//  };
-//
-//  function speech () {
-// 	 // Начинаем слушать микрофон и распознавать голос
-// 	 recognizer.start();
-//  }
-//
-//  var synth = window.speechSynthesis;
-//  var utterance = new SpeechSynthesisUtterance('How about we say this now? This is quite a long sentence to say.');
-//
-//  function talk () {
-// 	 synth.speak (utterance);
-//  }
-//
-//  function stop () {
-// 	 synth.pause();
-//  }
+toggle.addEventListener('click', function() {
+	nav.classList.toggle('open');
+
+  if (nav.classList.contains('open')) {
+    toggle.innerHTML = toggle_close_text;
+  } else {
+    toggle.innerHTML = toggle_open_text;
+  }
+}, false);
+
+setTimeout(function(){
+	nav.classList.toggle('open');
+}, 800);
+// menu
+
+// bg
+    $(".b1").click(function(){
+        $(".v1").css({"display": "block"});
+				$(".v2").css({"display": "none"});
+    });
+    $(".b2").click(function(){
+        $(".v2").css({"display": "block"});
+				$(".v1").css({"display": "none"});
+    });
+// bg
+
+
+$("#icon-close").click(function(){
+  $("#form").css("display", "none");
+});
